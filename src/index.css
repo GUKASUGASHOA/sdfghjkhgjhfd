@@ -1,0 +1,138 @@
+:root {
+  --bg-primary: #fcfbf9; /* Теплый молочный оттенок вместо банального серого */
+  --bg-card: #ffffff;
+  --text-main: #111111;
+  --text-muted: #666666;
+  --accent: #111111; /* Строгий черный минимализм для премиум-бренда */
+  --accent-hover: #333333;
+  --border: #e6e6e6;
+  --radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Общие контейнеры */
+.catalog-container, .dashboard-container, .home-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Сетка карточек товаров */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Премиальная карточка товара */
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: #d1d1d1;
+}
+
+.product-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  background-color: #f4f4f4;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+}
+
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.product-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.product-title {
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Теги */
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.2rem 0;
+}
+
+.tag-badge {
+  background-color: #f2f2f2;
+  color: #444;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Кнопки */
+.btn-primary, .submit-btn {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.85rem 1.75rem;
+  border: none;
+  border-radius: 9999px; /* Скругленные трендовые кнопки "пилюли" */
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-primary:hover, .submit-btn:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.02);
+}
